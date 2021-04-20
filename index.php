@@ -46,8 +46,8 @@ $ikan = get_all('tbl_ikan');
             <td><?= $row["jumlah_ikan"]?></td>
             <td><?= $row["harga_ikan"]?></td>
         <td>
-            <a href="" class="btn btn-warning">ubah</a>
-            <a href="" class="btn btn-danger">hapus</a>
+            <a href="ubah.php ?id=<?= $row["id"] ?>" class="btn btn-warning">ubah</a>
+            <a href="hapus.php ?id=<?= $row["id"] ?>" onclick="return confirm('yakin?');" class="btn btn-danger">hapus</a>
         </td>
     </tr>
     <?php $i++; ?>

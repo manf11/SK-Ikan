@@ -29,4 +29,32 @@ function tambah ($data){
 
     return mysqli_affected_rows($conn);
 }
+function hapus($id){
+    global $conn;
+    mysqli_query($conn,"DELETE FROM tbl_ikan WHERE id = $id");
+
+    return mysqli_affected_rows($conn);
+
+}
+function ubah($data){
+    global $conn;
+
+    $id = $data["id"];
+    $namaikan = htmlspecialchars($data["nama_ikan"]);
+    $kategori = htmlspecialchars($data["kategori_ikan"]);
+    $jumlah = htmlspecialchars($data["jumlah_ikan"]);
+    $harga = htmlspecialchars($data["harga_ikan"]);
+
+    $query = "UPDATE tbl_ikan set
+                nama_ikan = '$namaikan',
+                kategori_ikan = '$kategori',
+                jumlah_ikan = '$jumlah',
+                harga = '$harga'
+                    WHERE id = $id";
+
+    mysqli_query ($conn,$query);
+    return mysqli_affected_rows($conn);
+
+
+}
 ?>

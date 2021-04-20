@@ -10,4 +10,9 @@ function query($query){
     }
     return $rows;
 }
+
+function get_all($table_name) {
+    return query("SELECT * FROM {$table_name}")
+}
+
 ?>

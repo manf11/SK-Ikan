@@ -3,9 +3,8 @@
 $conn = mysqli_connect("localhost","root","","db_ikan");
 
 function get_all($tbl_ikan){
-    return query("SELECT * FROM {$tbl_ikan}");
+    return query("SELECT * FROM {$tbl_ikan} WHERE id");
 }
-
 function query($query){
     global $conn;
     $result = mysqli_query($conn,$query);
